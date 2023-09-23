@@ -488,6 +488,15 @@ bool OS::has_feature(const String &p_feature) {
 	if (p_feature == "wasm") {
 		return true;
 	}
+#elif defined(__mips__)
+#if defined(__mips64__)
+	if (p_feature == "mips64") {
+		return true;
+	}
+#endif
+	if (p_feature == "mips") {
+		return true;
+	}
 #endif
 
 	if (_check_internal_feature_support(p_feature)) {

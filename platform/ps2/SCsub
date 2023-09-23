@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+Import("env")
+
+common_ps2 = [
+    "os_ps2.cpp"
+]
+
+prog = env.add_program("#bin/godot", ["godot_ps2.cpp"] + common_ps2)

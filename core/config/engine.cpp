@@ -232,6 +232,12 @@ String Engine::get_architecture_name() const {
 #elif defined(__wasm32__)
 	return "wasm32";
 #endif
+
+#elif defined(__mips__)
+#if defined(__mips64__)
+	return "mips64";
+#endif
+
 #endif
 }
 

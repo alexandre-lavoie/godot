@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="EditorExportPlatformWeb" inherits="EditorExportPlatform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../class.xsd">
+	<brief_description>
+		Exporter for PS2.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+		<link title="Exporting for the PS2">$DOCS_URL/tutorials/export/exporting_for_ps2.html</link>
+		<link title="PS2 documentation index">$DOCS_URL/tutorials/platform/ps2/index.html</link>
+	</tutorials>
+	<members>
+		<member name="custom_template/debug" type="String" setter="" getter="">
+			Path to the custom export template. If left empty, default template is used.
+		</member>
+		<member name="custom_template/release" type="String" setter="" getter="">
+			Path to the custom export template. If left empty, default template is used.
+		</member>
+	</members>
+</class>
