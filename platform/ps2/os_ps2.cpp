@@ -56,9 +56,7 @@ MainLoop *OS_PS2::get_main_loop() const {
     return main_loop;
 }
 
-void OS_PS2::initialize() {
-    initialize_core();
-}
+void OS_PS2::initialize() {}
 
 void OS_PS2::initialize_joypads() {}
 

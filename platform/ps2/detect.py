@@ -79,7 +79,6 @@ def configure(env: "Environment"):
 
     # Flags
 
-    env.Append(CCFLAGS=["-march=r5900"])
+    env.Append(CCFLAGS=["-mlong64"])
     env.Prepend(CPPPATH=["#platform/ps2"])
-    env.Append(CPPDEFINES=["PS2_ENABLED", "UNIX_ENABLED"])
-    env.Append(CPPDEFINES=["NEED_LONG_INT"]) # PS2_TODO: Is this a hack?
+    env.Append(CPPDEFINES=["PS2_ENABLED"])

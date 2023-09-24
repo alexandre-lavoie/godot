@@ -46,7 +46,7 @@ public:
 
 		LocalVector<float> data;
 		LocalVector<Size2i> sizes;
-		LocalVector<float *> mips;
+		LocalVector<float *> mip_maps;
 
 		RID debug_texture;
 		Ref<Image> debug_image;
@@ -105,7 +105,7 @@ public:
 			rect_max = rect_max.min(Vector2(1, 1));
 			rect_min = rect_min.max(Vector2(0, 0));
 
-			int mip_count = mips.size();
+			int mip_count = mip_maps.size();
 
 			Vector2 screen_diagonal = (rect_max - rect_min) * sizes[0];
 			float size = MAX(screen_diagonal.x, screen_diagonal.y);
@@ -135,7 +135,7 @@ public:
 				visible = false;
 				for (int y = miny; y <= maxy; y++) {
 					for (int x = minx; x <= maxx; x++) {
-						float depth = mips[lod][y * w + x];
+						float depth = mip_maps[lod][y * w + x];
 						if (depth > min_depth) {
 							visible = true;
 							break;

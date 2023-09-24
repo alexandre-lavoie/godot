@@ -38,8 +38,11 @@
 #include <ws2tcpip.h>
 #define SOCKET_TYPE SOCKET
 
-#else
+#elif defined(UNIX_ENABLED)
 #include <sys/socket.h>
+#define SOCKET_TYPE int
+
+#else
 #define SOCKET_TYPE int
 
 #endif

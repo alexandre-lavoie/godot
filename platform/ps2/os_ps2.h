@@ -31,9 +31,9 @@
 #ifndef OS_PS2_H
 #define OS_PS2_H
 
-#include "drivers/unix/os_unix.h"
+#include "core/os/os.h"
 
-class OS_PS2 : public OS_Unix {
+class OS_PS2 : public OS {
 private:
     MainLoop *main_loop = nullptr;
 

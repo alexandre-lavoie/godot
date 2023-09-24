@@ -374,7 +374,7 @@ namespace basisu
 		return cECSuccess;
 	}
 
-	bool basis_compressor::generate_mipmaps(const image &img, basisu::vector<image> &mips, bool has_alpha)
+	bool basis_compressor::generate_mipmaps(const image &img, basisu::vector<image> &mip_maps, bool has_alpha)
 	{
 		debug_printf("basis_compressor::generate_mipmaps\n");
 
@@ -409,7 +409,7 @@ namespace basisu
 			const uint32_t level_width = maximum<uint32_t>(1, img.get_width() >> level);
 			const uint32_t level_height = maximum<uint32_t>(1, img.get_height() >> level);
 
-			image &level_img = *enlarge_vector(mips, 1);
+			image &level_img = *enlarge_vector(mip_maps, 1);
 			level_img.resize(level_width, level_height);
 						
 			int result = stbir_resize_uint8_generic( 
@@ -434,7 +434,7 @@ namespace basisu
 			const uint32_t level_width = maximum<uint32_t>(1, img.get_width() >> level);
 			const uint32_t level_height = maximum<uint32_t>(1, img.get_height() >> level);
 
-			image& level_img = *enlarge_vector(mips, 1);
+			image& level_img = *enlarge_vector(mip_maps, 1);
 			level_img.resize(level_width, level_height);
 
 			const image* pSource_image = &img;
@@ -442,7 +442,7 @@ namespace basisu
 			if (m_params.m_mip_fast)
 			{
 				if (level > 1)
-					pSource_image = &mips[level - 1];
+					pSource_image = &mip_maps[level - 1];
 			}
 
 			bool status = image_resample(*pSource_image, level_img, m_params.m_mip_srgb, m_params.m_mip_filter.c_str(), m_params.m_mip_scale, m_params.m_mip_wrapping, 0, has_alpha ? 4 : 3);

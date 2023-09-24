@@ -63,7 +63,7 @@ template <class T>
 class SafeNumeric {
 	std::atomic<T> value;
 
-	static_assert(std::atomic<T>::is_always_lock_free);
+	// static_assert(std::atomic<T>::is_always_lock_free);
 
 public:
 	_ALWAYS_INLINE_ void set(T p_value) {

@@ -191,7 +191,7 @@ void RaycastOcclusionCull::RaycastHZBuffer::sort_rays(const Vector3 &p_camera_di
 						d *= cos_theta;
 					}
 
-					mips[0][y * buffer_size.x + x] = d;
+					mip_maps[0][y * buffer_size.x + x] = d;
 				}
 			}
 		}
